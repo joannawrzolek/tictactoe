@@ -10,13 +10,24 @@ public class Player {
 
     public Position getNextMove() throws IOException {
 
-        String line = reader.readLine();
-        String el[] = line.split(" ");
-        Integer x = Integer.parseInt(el[0]);
-        Integer y = Integer.parseInt(el[1]);
+        Integer x = null;
+        Integer y = null;
+
+        try {
+            String line = reader.readLine();
+            String el[] = line.split(" ");
+            x = Integer.parseInt(el[0]);
+            y = Integer.parseInt(el[1]);
+        }catch (ArrayIndexOutOfBoundsException e) {
+            //e.printStackTrace();
+            System.out.println("Błędne wprowadzona pozycja, straciłeś kolejkę: ");
+        }
+        catch (NullPointerException e) {
+            //e.printStackTrace();
+            System.out.println("Błędne wprowadzona pozycja, straciłeś kolejkę: ");
+        }
 
         Position position = new Position(x, y);
-
         return position;
     }
 }

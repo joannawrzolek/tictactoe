@@ -1,5 +1,11 @@
 package tech.academy.tictactoe;
 
-public enum CellState {
-    O, X, EMPTY
+public class CellState {
+public enum CellStateEnum {
+    O, X, EMPTY;
+
+
+}
+
+
 }
